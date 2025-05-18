@@ -1,9 +1,11 @@
 import random
 import json
+import os
 
 
 class GuessWord:
     def game(self):
+        file = os.path.join(os.path.dirname(__file__), 'Include', 'words.json')
         with open("guess_word/Include/words.json", "r") as words_file:
             words = json.load(words_file)
             word_selected = str(random.choice(words))
